@@ -25,10 +25,9 @@ const HeroSection = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
       <HeroContent>
-        <HeroH1>Virtual Banking Made Easy</HeroH1>
+        <HeroH1>Now Buying Seeds made easy</HeroH1>
         <HeroP>
-          Sign Up for an new account today and receive $250 in credit towards
-          your next payment.
+          Buy from our wide range of products with wide variety of packaging
         </HeroP>
         <HeroBtnWrapper>
           <Button
