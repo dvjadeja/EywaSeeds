@@ -1,4 +1,5 @@
 import React from "react";
+import { animateScroll as scroll } from "react-scroll";
 import {
   FaFacebook,
   FaInstagram,
@@ -21,6 +22,10 @@ import {
   SocialMediaWrap,
   WebsiteRights,
 } from "./FooterElements";
+
+const toggleHome = () => {
+  scroll.scrollToTop();
+};
 
 const Footer = () => {
   return (
@@ -65,15 +70,25 @@ const Footer = () => {
           </FooterLinksContainer>
           <SocialMedia>
             <SocialMediaWrap>
-              <SocialLogo to="/">Dolla</SocialLogo>
+              <SocialLogo to="/" onClick={toggleHome}>
+                Eywa Seeds and Exports Pvt. Ltd
+              </SocialLogo>
               <WebsiteRights>
-                dolla © {new Date().getFullYear()} All Rights Reserved.
+                Eywa © {new Date().getFullYear()} All Rights Reserved.
               </WebsiteRights>
               <SocialIcons>
-                <SocialIconLink href="/" target="_blank" aria-label="Facebook">
+                <SocialIconLink
+                  href="https://www.facebook.com/dilip.jadeja.904"
+                  target="_blank"
+                  aria-label="Facebook"
+                >
                   <FaFacebook />
                 </SocialIconLink>
-                <SocialIconLink href="/" target="_blank" aria-label="Instagram">
+                <SocialIconLink
+                  href="https://z-p42.www.instagram.com/dilipsinh_jadeja_/"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
                   <FaInstagram />
                 </SocialIconLink>
                 <SocialIconLink href="/" target="_blank" aria-label="Youtube">
@@ -82,7 +97,11 @@ const Footer = () => {
                 <SocialIconLink href="/" target="_blank" aria-label="Twitter">
                   <FaTwitter />
                 </SocialIconLink>
-                <SocialIconLink href="/" target="_blank" aria-label="LinkedIn">
+                <SocialIconLink
+                  href="https://in.linkedin.com/in/dilipsinh-jadeja"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                >
                   <FaLinkedin />
                 </SocialIconLink>
               </SocialIcons>

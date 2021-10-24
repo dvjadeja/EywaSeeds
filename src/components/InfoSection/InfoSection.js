@@ -43,12 +43,13 @@ const InfoSection = ({
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <Button
-                    to="home"
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    exact="true"
-                    offset={-80}
+                    href={
+                      buttonLabel === "Send Message on Whatspp"
+                        ? "https://api.whatsapp.com/send/?phone=919879891815&text&app_absent=0"
+                        : ""
+                    }
+                    target="_blank"
+                    aria-label="Whatsapp"
                     primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}

@@ -1,7 +1,9 @@
-import React from "react";
-import Icon1 from "../../images/svg-4.svg";
-import Icon2 from "../../images/svg-5.svg";
-import Icon3 from "../../images/svg-6.svg";
+import React, { useState } from "react";
+// import Icon1 from "../../images/eva-p1.png";
+// import Icon2 from "../../images/svg-5.svg";
+// import Icon3 from "../../images/svg-6.svg";
+import { ProductData } from "../../utils/ProductData";
+import ProductDetailModal from "../ProductDetailsModal/ProductDetailModal";
 import {
   ServicesCard,
   ServicesContainer,
@@ -13,32 +15,20 @@ import {
 } from "./ServicesElements";
 
 const Services = () => {
+  const [modalShow, setModalShow] = useState(false);
   return (
     <>
+      <ProductDetailModal show={modalShow} onHide={() => setModalShow(false)} />
       <ServicesContainer id="services">
-        <ServicesH1>Our Services</ServicesH1>
+        <ServicesH1>Our Products</ServicesH1>
         <ServicesWrapper>
-          <ServicesCard>
-            <ServicesIcon src={Icon1} />
-            <ServicesH2>Reduce Expenses</ServicesH2>
-            <ServicesP>
-              We help Reduce your fess and increase your overall revenue
-            </ServicesP>
-          </ServicesCard>
-          <ServicesCard>
-            <ServicesIcon src={Icon2} />
-            <ServicesH2>Virtual offices</ServicesH2>
-            <ServicesP>
-              You can access our platform online naywhere in the world.
-            </ServicesP>
-          </ServicesCard>
-          <ServicesCard>
-            <ServicesIcon src={Icon3} />
-            <ServicesH2>Premium Benefits</ServicesH2>
-            <ServicesP>
-              Unlock our special membership card that returns 5% cash back.{" "}
-            </ServicesP>
-          </ServicesCard>
+          {ProductData.map((data, index) => (
+            <ServicesCard key={index} onClick={() => setModalShow(true)}>
+              <ServicesIcon src={data.img} />
+              <ServicesH2>{data.name}</ServicesH2>
+              <ServicesP>Click to see Product Information</ServicesP>
+            </ServicesCard>
+          ))}
         </ServicesWrapper>
       </ServicesContainer>
     </>
