@@ -4,8 +4,6 @@ import {
   MobileIcon,
   Nav,
   NavbarContainer,
-  NavBtn,
-  NavBtnLink,
   NavItem,
   NavLinks,
   NavLogo,
