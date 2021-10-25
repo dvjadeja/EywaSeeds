@@ -16,14 +16,41 @@ import {
 
 const Services = () => {
   const [modalShow, setModalShow] = useState(false);
+  const [tempData, setTempData] = useState([]);
+  const getData = (img, title, desc, p1, p2, p3) => {
+    let tempData = [img, title, desc, p1, p2, p3];
+    setTempData((item) => [1, ...tempData]);
+  };
   return (
     <>
-      <ProductDetailModal show={modalShow} onHide={() => setModalShow(false)} />
+      <ProductDetailModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        img={tempData[1]}
+        title={tempData[2]}
+        desc={tempData[3]}
+        p1={tempData[4]}
+        p2={tempData[5]}
+        p3={tempData[6]}
+      />
       <ServicesContainer id="services">
         <ServicesH1>Our Products</ServicesH1>
         <ServicesWrapper>
           {ProductData.map((data, index) => (
-            <ServicesCard key={index} onClick={() => setModalShow(true)}>
+            <ServicesCard
+              key={index}
+              onClick={() => {
+                getData(
+                  data.img,
+                  data.name,
+                  data.desc,
+                  data.p1,
+                  data.p2,
+                  data.p3
+                );
+                setModalShow(true);
+              }}
+            >
               <ServicesIcon src={data.img} />
               <ServicesH2>{data.name}</ServicesH2>
               <ServicesP>Click to see Product Information</ServicesP>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-import Ajwain from "../../images/ajwain/eva-p1.png";
 
 const ProductDetailModal = (props) => {
   return (
@@ -12,7 +11,9 @@ const ProductDetailModal = (props) => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Ajwain</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">
+            {props.title}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div
@@ -24,33 +25,18 @@ const ProductDetailModal = (props) => {
           >
             <div style={{ height: 300, width: 300 }}>
               <img
-                src={Ajwain}
+                src={props.img}
                 alt="ajwain"
                 style={{ height: "100%", width: "100%" }}
               />
             </div>
           </div>
           <div style={{ fontSize: "0.8rem", padding: 10 }}>
-            <p style={{ fontSize: "0.8rem", fontWeight: 600 }}>
-              Ajwain seeds offer numerous health benefits, have a bitter,
-              pungent taste,and are highest quality spice and a delightful
-              addition to any meal, complimentary to vegan and vegetarian
-              lifestyles.
-            </p>
+            <p style={{ fontSize: "0.8rem", fontWeight: 600 }}>{props.desc}</p>
             <div>
-              <p>
-                1) Rich in fiber, minerals, vitamins and antioxidants. It can
-                even be chewed raw, added to water or tea.
-              </p>
-              <p>
-                2)One of the most famous ingredient in many Indian Recipes such
-                as pooris, kachoris, rasam, kadhi, etc.. Ajwain is used in
-                making various types of Parathas, roti, bread, etc.
-              </p>
-              <p>
-                3) Believed to help in acidity, constipation, digestion, and to
-                have carminative Properties.
-              </p>
+              <p>1) {props.p1}</p>
+              <p>2) {props.p2}</p>
+              <p>3) {props.p3}</p>
             </div>
           </div>
         </Modal.Body>
