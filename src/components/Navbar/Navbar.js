@@ -21,7 +21,7 @@ const Navbar = ({ toggle }) => {
       <Nav>
         <NavbarContainer>
           <NavLogo to="/" onClick={toggleHome}>
-            Eywa Seeds
+            Eywa Seeds & Exports Pvt. Ltd
           </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />

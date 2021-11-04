@@ -57,19 +57,18 @@ const ProductDetailModal = (props) => {
             </Button>{" "}
           </div>
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <Button
-              variant="success"
-              className="me-1"
-              href="https://www.amazon.in/Organic-Ajwain-Spices-Indian-Masala/dp/B09GW313NX/ref=sr_1_5?dchild=1&keywords=eywa%2Bseeds%2Bajwain&qid=1635048037&sr=8-5&th=1"
-              target="_blank"
-              aria-label="ajwain-1kg"
-            >
-              1 Kg
-            </Button>{" "}
-            <Button variant="success" className="me-1">
-              2 Kg
-            </Button>{" "}
-            <Button variant="success">3 Kg</Button>
+            {props.btn.map((data) => (
+              <Button
+                variant="success"
+                className="me-1"
+                href={data.link}
+                target="_blank"
+                aria-label={data.weight}
+              >
+                {data.weight}
+              </Button>
+            ))}
+            {console.log(props.btn)}
           </div>
         </Modal.Footer>
       </Modal>

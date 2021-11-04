@@ -17,8 +17,8 @@ import {
 const Services = () => {
   const [modalShow, setModalShow] = useState(false);
   const [tempData, setTempData] = useState([]);
-  const getData = (img, title, desc, p1, p2, p3) => {
-    let tempData = [img, title, desc, p1, p2, p3];
+  const getData = (img, title, desc, p1, p2, p3, btn) => {
+    let tempData = [img, title, desc, p1, p2, p3, btn];
     setTempData((item) => [1, ...tempData]);
   };
   return (
@@ -32,7 +32,9 @@ const Services = () => {
         p1={tempData[4]}
         p2={tempData[5]}
         p3={tempData[6]}
+        btn={tempData[7]}
       />
+      {console.log(tempData[7])}
       <ServicesContainer id="services">
         <ServicesH1>Our Products</ServicesH1>
         <ServicesWrapper>
@@ -46,7 +48,8 @@ const Services = () => {
                   data.desc,
                   data.p1,
                   data.p2,
-                  data.p3
+                  data.p3,
+                  data.btn
                 );
                 setModalShow(true);
               }}
