@@ -2,6 +2,7 @@ import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
 const ProductDetailModal = (props) => {
+  const { data } = props;
   return (
     <>
       <Modal
@@ -12,7 +13,7 @@ const ProductDetailModal = (props) => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            {props.title}
+            {data?.name}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -25,18 +26,18 @@ const ProductDetailModal = (props) => {
           >
             <div style={{ height: 300, width: 300 }}>
               <img
-                src={props.img}
+                src={data?.img}
                 alt="ajwain"
                 style={{ height: "100%", width: "100%" }}
               />
             </div>
           </div>
           <div style={{ fontSize: "0.8rem", padding: 10 }}>
-            <p style={{ fontSize: "0.8rem", fontWeight: 600 }}>{props.desc}</p>
+            <p style={{ fontSize: "0.8rem", fontWeight: 600 }}>{data?.desc}</p>
             <div>
-              <p>1) {props.p1}</p>
-              <p>2) {props.p2}</p>
-              <p>3) {props.p3}</p>
+              <p>1) {data?.p1}</p>
+              <p>2) {data?.p2}</p>
+              <p>3) {data?.p3}</p>
             </div>
           </div>
         </Modal.Body>
@@ -57,18 +58,17 @@ const ProductDetailModal = (props) => {
             </Button>{" "}
           </div>
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            {props.btn.map((data) => (
+            {data?.btn.map((data, index) => (
               <Button
                 variant="success"
                 className="me-1"
-                href={data.link}
+                href={data?.link}
                 target="_blank"
-                aria-label={data.weight}
+                aria-label={data?.weight}
               >
                 {data.weight}
               </Button>
             ))}
-            {console.log(props.btn)}
           </div>
         </Modal.Footer>
       </Modal>
