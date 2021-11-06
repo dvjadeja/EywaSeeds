@@ -60,6 +60,7 @@ const ProductDetailModal = (props) => {
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
             {data?.btn.map((data, index) => (
               <Button
+                key={index}
                 variant="success"
                 className="me-1"
                 href={data?.link}
